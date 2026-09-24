@@ -134,7 +134,7 @@ const getAllNews = async (query: NewsQuery, publishedOnly = false) => {
         const skip = (page - 1) * limit
         const where = buildNewsWhere(query, publishedOnly)
 
-        const [news, total] = await prisma.$transaction([
+        const [news, total] = await Promise.all([
             prisma.news.findMany({
                 where,
                 select: newsSelect,

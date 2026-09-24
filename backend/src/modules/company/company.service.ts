@@ -137,7 +137,7 @@ const getAllCompanies = async (query: CompanyQuery, publishedOnly = false) => {
         const skip = (page - 1) * limit
         const where = buildCompanyWhere(query, publishedOnly)
 
-        const [companies, total] = await prisma.$transaction([
+        const [companies, total] = await Promise.all([
             prisma.company.findMany({
                 where,
                 select: companySelect,

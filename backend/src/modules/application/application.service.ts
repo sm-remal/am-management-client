@@ -181,7 +181,7 @@ const getAllApplications = async (query: ApplicationQuery) => {
         const skip = (page - 1) * limit
         const where = buildApplicationWhere(query)
 
-        const [applications, total] = await prisma.$transaction([
+        const [applications, total] = await Promise.all([
             prisma.application.findMany({
                 where,
                 select: applicationSelect,

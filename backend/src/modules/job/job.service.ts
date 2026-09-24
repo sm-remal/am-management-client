@@ -160,7 +160,7 @@ const getAllJobs = async (query: JobQuery, publishedOnly = false) => {
         const skip = (page - 1) * limit
         const where = buildJobWhere(query, publishedOnly)
 
-        const [jobs, total] = await prisma.$transaction([
+        const [jobs, total] = await Promise.all([
             prisma.job.findMany({
                 where,
                 select: jobSelect,

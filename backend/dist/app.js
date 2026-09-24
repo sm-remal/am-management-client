@@ -29495,7 +29495,7 @@ var getAllCompanies = async (query, publishedOnly = false) => {
     const limit = parsePositiveNumber(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildCompanyWhere(query, publishedOnly);
-    const [companies, total] = await prisma.$transaction([
+    const [companies, total] = await Promise.all([
       prisma.company.findMany({
         where,
         select: companySelect,
@@ -29844,7 +29844,7 @@ var getAllInquiries = async (query) => {
     const limit = parsePositiveNumber2(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildInquiryWhere(query);
-    const [inquiries, total] = await prisma.$transaction([
+    const [inquiries, total] = await Promise.all([
       prisma.inquiry.findMany({
         where,
         select: inquirySelect,
@@ -30388,7 +30388,7 @@ var getAllGalleryImages = async (query, publishedOnly = false) => {
     const limit = parsePositiveNumber4(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildGalleryWhere(query, publishedOnly);
-    const [galleryImages, total] = await prisma.$transaction([
+    const [galleryImages, total] = await Promise.all([
       prisma.galleryImage.findMany({
         where,
         select: galleryImageSelect,
@@ -30769,7 +30769,7 @@ var getAllProjects = async (query, publishedOnly = false) => {
     const limit = parsePositiveNumber5(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildProjectWhere(query, publishedOnly);
-    const [projects, total] = await prisma.$transaction([
+    const [projects, total] = await Promise.all([
       prisma.project.findMany({
         where,
         select: projectSelect,
@@ -31274,7 +31274,7 @@ var getAllServices = async (query, activeOnly = false) => {
     const limit = parsePositiveNumber6(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildServiceWhere(query, activeOnly);
-    const [services, total] = await prisma.$transaction([
+    const [services, total] = await Promise.all([
       prisma.service.findMany({
         where,
         select: serviceSelect,
@@ -31582,7 +31582,7 @@ var getAllSettings = async (query) => {
     const limit = parsePositiveNumber7(query.limit, 50);
     const skip = (page - 1) * limit;
     const where = buildSettingWhere(query);
-    const [settings, total] = await prisma.$transaction([
+    const [settings, total] = await Promise.all([
       prisma.setting.findMany({
         where,
         select: settingSelect,
@@ -31920,7 +31920,7 @@ var getAllUsers = async (query) => {
     const limit = parsePositiveNumber8(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildUserWhere(query);
-    const [users, total] = await prisma.$transaction([
+    const [users, total] = await Promise.all([
       prisma.user.findMany({
         where,
         select: userSelect2,
@@ -32283,7 +32283,7 @@ var getAllNews = async (query, publishedOnly = false) => {
     const limit = parsePositiveNumber9(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildNewsWhere(query, publishedOnly);
-    const [news, total] = await prisma.$transaction([
+    const [news, total] = await Promise.all([
       prisma.news.findMany({
         where,
         select: newsSelect,
@@ -32663,7 +32663,7 @@ var getAllJobs = async (query, publishedOnly = false) => {
     const limit = parsePositiveNumber10(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildJobWhere(query, publishedOnly);
-    const [jobs, total] = await prisma.$transaction([
+    const [jobs, total] = await Promise.all([
       prisma.job.findMany({
         where,
         select: jobSelect,
@@ -33062,7 +33062,7 @@ var getAllApplications = async (query) => {
     const limit = parsePositiveNumber11(query.limit, 10);
     const skip = (page - 1) * limit;
     const where = buildApplicationWhere(query);
-    const [applications, total] = await prisma.$transaction([
+    const [applications, total] = await Promise.all([
       prisma.application.findMany({
         where,
         select: applicationSelect,

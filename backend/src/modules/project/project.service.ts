@@ -203,7 +203,7 @@ const getAllProjects = async (query: ProjectQuery, publishedOnly = false) => {
         const skip = (page - 1) * limit
         const where = buildProjectWhere(query, publishedOnly)
 
-        const [projects, total] = await prisma.$transaction([
+        const [projects, total] = await Promise.all([
             prisma.project.findMany({
                 where,
                 select: projectSelect,

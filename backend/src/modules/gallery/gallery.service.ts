@@ -124,7 +124,7 @@ const getAllGalleryImages = async (query: GalleryQuery, publishedOnly = false) =
         const skip = (page - 1) * limit
         const where = buildGalleryWhere(query, publishedOnly)
 
-        const [galleryImages, total] = await prisma.$transaction([
+        const [galleryImages, total] = await Promise.all([
             prisma.galleryImage.findMany({
                 where,
                 select: galleryImageSelect,

@@ -70,7 +70,7 @@ const getAllSettings = async (query: SettingQuery) => {
         const skip = (page - 1) * limit
         const where = buildSettingWhere(query)
 
-        const [settings, total] = await prisma.$transaction([
+        const [settings, total] = await Promise.all([
             prisma.setting.findMany({
                 where,
                 select: settingSelect,

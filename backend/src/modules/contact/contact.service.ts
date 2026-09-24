@@ -99,7 +99,7 @@ const getAllInquiries = async (query: ContactQuery) => {
         const skip = (page - 1) * limit
         const where = buildInquiryWhere(query)
 
-        const [inquiries, total] = await prisma.$transaction([
+        const [inquiries, total] = await Promise.all([
             prisma.inquiry.findMany({
                 where,
                 select: inquirySelect,

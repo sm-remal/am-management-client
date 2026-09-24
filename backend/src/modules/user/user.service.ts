@@ -126,7 +126,7 @@ const getAllUsers = async (query: UserQuery) => {
         const skip = (page - 1) * limit
         const where = buildUserWhere(query)
 
-        const [users, total] = await prisma.$transaction([
+        const [users, total] = await Promise.all([
             prisma.user.findMany({
                 where,
                 select: userSelect,
