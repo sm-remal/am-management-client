@@ -63,6 +63,7 @@ export default function CareersPage() {
       <AboutBanner
         title="Careers at AM Management Group"
         description="Build your career with a diversified Malaysian business group operating across multiple industries and business sectors."
+        descriptionClassName="hidden md:block"
       />
 
       <main className="container mx-auto space-y-24 px-4 py-16 sm:px-6 lg:px-8">
@@ -70,8 +71,8 @@ export default function CareersPage() {
         <section className="relative">
           <div className="mb-12 text-center">
             <span className="text-xs font-extrabold uppercase tracking-widest text-secondary"></span>
-            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              Why Join Us?
+            <h2 className="mt-2 text-3xl font-bold sm:text-4xl text-primary uppercase">
+              Why Join Us
             </h2>
           </div>
 
@@ -107,13 +108,13 @@ export default function CareersPage() {
               return (
                 <div
                   key={item.title}
-                  className="group relative rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5"
+                  className="group relative rounded-md border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-xl hover:shadow-primary/5 "
                 >
-                  <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-secondary group-hover:text-secondary-foreground">
+                  <div className="mb-6 flex size-12 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-hover:bg-secondary group-hover:text-secondary-foreground">
                     <Icon className="size-6" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-primary group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
 
@@ -121,7 +122,7 @@ export default function CareersPage() {
                     {item.description}
                   </p>
 
-                  <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-md bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
               );
             })}
@@ -135,7 +136,7 @@ export default function CareersPage() {
               <span className="text-xs font-extrabold uppercase tracking-widest text-secondary">
                 Opportunities
               </span>
-              <h2 className="mt-1 text-3xl font-bold text-foreground">
+              <h2 className="mt-1 text-3xl font-bold text-primary uppercase">
                 Available Positions
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
@@ -151,18 +152,18 @@ export default function CareersPage() {
           </div>
 
           {loading ? (
-            <div className="rounded-2xl border border-border bg-card p-12 text-center shadow-sm">
+            <div className="rounded-md border border-border bg-card p-12 text-center shadow-sm">
               <div className="mx-auto size-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
               <p className="mt-4 text-sm font-medium text-muted-foreground">
                 Loading available positions...
               </p>
             </div>
           ) : error ? (
-            <div className="rounded-2xl border border-destructive/30 bg-destructive/10 p-6 text-sm font-medium text-destructive">
+            <div className="rounded-md border border-destructive/30 bg-destructive/10 p-6 text-sm font-medium text-destructive">
               {error}
             </div>
           ) : jobs.length === 0 ? (
-            <div className="rounded-2xl border border-border bg-card p-12 text-center shadow-sm">
+            <div className="rounded-md border border-border bg-card p-12 text-center shadow-sm">
               <BriefcaseBusiness className="mx-auto size-12 text-muted-foreground/40" />
 
               <h3 className="mt-4 text-lg font-bold text-foreground">
@@ -182,7 +183,7 @@ export default function CareersPage() {
                 return (
                   <div
                     key={job.id}
-                    className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg"
+                    className="group relative overflow-hidden rounded-md border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg"
                   >
                     <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                       <div className="min-w-0 space-y-3">
@@ -196,7 +197,7 @@ export default function CareersPage() {
                           </span>
                         </div>
 
-                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="text-xl font-bold text-primary group-hover:text-primary transition-colors">
                           {job.title}
                         </h3>
 
@@ -246,9 +247,9 @@ export default function CareersPage() {
         </section>
 
         {/* Process Section */}
-        <section className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-muted/80 px-6 py-16 sm:px-12">
+        <section className="relative overflow-hidden rounded-md border border-border bg-gradient-to-b from-muted/30 to-muted/80 px-6 py-16 sm:px-12">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold text-primary sm:text-4xl uppercase">
               Your journey starts here
             </h2>
           </div>
@@ -262,13 +263,13 @@ export default function CareersPage() {
             ].map(([number, title, description]) => (
               <div
                 key={number}
-                className="relative rounded-xl border border-border/50 bg-card p-5 shadow-sm"
+                className="relative rounded-md border border-border/50 bg-card p-5 shadow-sm"
               >
                 <span className="text-2xl font-black text-secondary">
                   {number}
                 </span>
 
-                <h3 className="mt-2 text-lg font-bold text-foreground">
+                <h3 className="mt-2 text-lg font-bold text-primary">
                   {title}
                 </h3>
 
@@ -281,9 +282,9 @@ export default function CareersPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-[#182e54] px-6 py-16 text-center text-primary-foreground shadow-2xl sm:px-12">
+        <section className="relative overflow-hidden rounded-md bg-gradient-to-br from-primary via-primary to-[#182e54] px-6 py-16 text-center text-primary-foreground shadow-2xl sm:px-12">
           <div className="relative z-10 mx-auto max-w-2xl">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">
+            <h2 className="text-3xl font-extrabold sm:text-4xl uppercase">
               Ready to take the next step?
             </h2>
 

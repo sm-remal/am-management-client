@@ -32,7 +32,7 @@ const CompanyCTA = ({ company }: CompanyCTAProps) => {
 
             <div className="mt-10 space-y-4">
               <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-primary/10">
                   <Phone size={19} className="text-primary" />
                 </div>
 
@@ -48,7 +48,7 @@ const CompanyCTA = ({ company }: CompanyCTAProps) => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-primary/10">
                   <Mail size={19} className="text-primary" />
                 </div>
 

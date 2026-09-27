@@ -118,14 +118,14 @@ export default function CompanyCareersSection({
         </div>
 
         {loading ? (
-          <div className="rounded-2xl border border-border bg-card p-10 text-center">
+          <div className="rounded-md border border-border bg-card p-10 text-center">
             <Loader2 className="mx-auto size-7 animate-spin text-primary" />
             <p className="mt-3 text-sm text-muted-foreground">
               Checking available positions...
             </p>
           </div>
         ) : error ? (
-          <div className="rounded-2xl border border-destructive/30 bg-destructive/10 p-6 text-sm text-destructive">
+          <div className="rounded-md border border-destructive/30 bg-destructive/10 p-6 text-sm text-destructive">
             {error}
           </div>
         ) : openJobs.length > 0 ? (
@@ -136,7 +136,7 @@ export default function CompanyCareersSection({
               return (
                 <article
                   key={job.id}
-                  className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
+                  className="rounded-md border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -186,7 +186,7 @@ export default function CompanyCareersSection({
             })}
           </div>
         ) : (
-          <div className="rounded-2xl border border-border bg-card p-10 text-center shadow-sm">
+          <div className="rounded-md border border-border bg-card p-10 text-center shadow-sm">
             <BriefcaseBusiness className="mx-auto size-10 text-muted-foreground/50" />
 
             <h3 className="mt-4 text-xl font-bold text-foreground">

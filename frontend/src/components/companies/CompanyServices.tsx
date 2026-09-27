@@ -71,11 +71,11 @@ const CompanyServices = ({ company }: CompanyServicesProps) => {
             <p className="text-sm">Loading services...</p>
           </div>
         ) : error ? (
-          <div className="rounded-xl border border-destructive/30 bg-destructive/10 p-5 text-sm text-destructive">
+          <div className="rounded-md border border-destructive/30 bg-destructive/10 p-5 text-sm text-destructive">
             {error}
           </div>
         ) : services.length === 0 ? (
-          <div className="rounded-xl border border-border bg-background p-10 text-center text-muted-foreground">
+          <div className="rounded-md border border-border bg-background p-10 text-center text-muted-foreground">
             No published services available for {company.name} yet.
           </div>
         ) : (
@@ -83,10 +83,10 @@ const CompanyServices = ({ company }: CompanyServicesProps) => {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className="group rounded-2xl border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded-md border border-border bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-primary/10 text-primary">
+                  <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-md bg-primary/10 text-primary">
                     {service.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img

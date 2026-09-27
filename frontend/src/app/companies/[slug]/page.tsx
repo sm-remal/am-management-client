@@ -74,7 +74,7 @@ export default async function CompanyDetailsPage({ params }: PageProps) {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-xl border border-border bg-card p-4"
+                    className="flex items-center gap-3 rounded-md border border-border bg-card p-4"
                   >
                     <CheckCircle2 size={19} className="shrink-0 text-primary" />
 

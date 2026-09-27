@@ -8,6 +8,7 @@ const page = () => {
       <AboutBanner
         title="Contact AM Management Group"
         description="Have a project tender, sub-contracting requirement, or corporate inquiry? Reach out to our team today."
+        descriptionClassName="hidden md:block"
       ></AboutBanner>
       <ContactPage></ContactPage>
     </div>

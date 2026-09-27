@@ -77,6 +77,7 @@ export default function ServicesPage() {
       <AboutBanner
         title="Our Services"
         description="Explore the range of professional services delivered across AM Management Group and its sister companies."
+        descriptionClassName="hidden md:block"
       />
       <main className="min-h-screen bg-muted/30 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,8 +106,8 @@ export default function ServicesPage() {
                 onClick={() => setIsFilterOpen((open) => !open)}
                 className={
                   selectedCategory !== "ALL"
-                    ? "flex h-12 w-full md:w-50 items-center justify-between rounded-xl border border-primary bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm"
-                    : "flex h-12 w-full md:w-50 items-center justify-between rounded-xl border border-border bg-card px-4 text-sm font-semibold text-foreground shadow-sm"
+                    ? "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-primary bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm"
+                    : "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-border bg-card px-4 text-sm font-semibold text-foreground shadow-sm"
                 }
               >
                 <span className="flex items-center gap-2">
@@ -123,13 +124,13 @@ export default function ServicesPage() {
               </button>
 
               {isFilterOpen && (
-                <div className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-xl border border-border bg-card p-2 shadow-xl">
+                <div className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-md border border-border bg-card p-2 shadow-xl">
                   {categories.map((category) => (
                     <button
                       key={category.value}
                       type="button"
                       onClick={() => changeCategory(category.value)}
-                      className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                      className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted"
                     >
                       {category.label}
                       {selectedCategory === category.value && (
@@ -148,12 +149,12 @@ export default function ServicesPage() {
               <p className="text-sm">Loading services...</p>
             </div>
           ) : error ? (
-            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
+            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-md border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-5 shrink-0" />
               <p>{error}</p>
             </div>
           ) : services.length === 0 ? (
-            <div className="rounded-xl border border-border bg-card p-10 text-center text-muted-foreground">
+            <div className="rounded-md border border-border bg-card p-10 text-center text-muted-foreground">
               No published services found.
             </div>
           ) : (
@@ -162,7 +163,7 @@ export default function ServicesPage() {
                 {services.map((service) => (
                   <article
                     key={service.id}
-                    className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                    className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
                   >
                     <div className="relative aspect-[16/10] bg-muted">
                       {service.image ? (

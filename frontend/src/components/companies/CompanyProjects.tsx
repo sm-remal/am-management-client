@@ -27,7 +27,7 @@ const CompanyProjects = ({ company }: CompanyProjectsProps) => {
           </h2>
         </div>
 
-        <div className="group overflow-hidden rounded-2xl border border-border bg-card">
+        <div className="group overflow-hidden rounded-md border border-border bg-card">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
             <div className="relative min-h-[350px] overflow-hidden lg:min-h-[500px]">
               <Image

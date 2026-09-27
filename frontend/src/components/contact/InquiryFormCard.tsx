@@ -20,7 +20,7 @@ const initialForm = (defaultCompanyName = ""): CreateInquiryPayload => ({
 });
 
 const fieldClassName =
-  "w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20 placeholder:text-slate-400";
+  "w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20 placeholder:text-slate-400";
 
 const InquiryFormCard = ({
   defaultCompanyName = "",
@@ -66,7 +66,7 @@ const InquiryFormCard = ({
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-green-200 bg-white p-8 text-center shadow-sm sm:p-10">
+      <div className="rounded-md border border-green-200 bg-white p-8 text-center shadow-sm sm:p-10">
         <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-green-50 text-green-700">
           <CheckCircle2 className="size-7" />
         </div>
@@ -80,7 +80,7 @@ const InquiryFormCard = ({
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="mt-6 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-800 transition hover:border-secondary hover:text-secondary"
+          className="mt-6 rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-800 transition hover:border-secondary hover:text-secondary"
         >
           Send another inquiry
         </button>
@@ -89,15 +89,15 @@ const InquiryFormCard = ({
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-      <h2 className="text-2xl font-bold text-primary">Send Us An Inquiry</h2>
+    <div className="rounded-md border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+      <h2 className="text-2xl font-bold text-primary uppercase">Send Us An Inquiry</h2>
       <p className="mt-3 text-sm text-slate-500">
         Fill out the form below and our team will respond within 24 business
         hours.
       </p>
 
       {error && (
-        <div className="mt-6 flex items-start gap-2 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+        <div className="mt-6 flex items-start gap-2 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
           <AlertCircle className="mt-0.5 size-4 shrink-0" />
           <p>{error}</p>
         </div>
@@ -218,7 +218,7 @@ const InquiryFormCard = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex w-full items-center justify-center rounded-lg bg-secondary px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex w-full items-center justify-center rounded-md bg-secondary px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSubmitting ? (
             <>

@@ -92,7 +92,7 @@ export default function ProjectDetailPage({ params }: Props) {
           >
             &larr; Back to Projects
           </Link>
-          <div className="mt-8 flex items-start gap-3 rounded-xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-700">
+          <div className="mt-8 flex items-start gap-3 rounded-md border border-rose-200 bg-rose-50 p-5 text-sm text-rose-700">
             <AlertCircle className="mt-0.5 size-5 shrink-0" />
             <p>{error || "Project not found"}</p>
           </div>
@@ -127,7 +127,7 @@ export default function ProjectDetailPage({ params }: Props) {
             {project.description || "Project details will be updated soon."}
           </p>
 
-          <div className="relative mt-6 h-[300px] md:h-[600px] w-full overflow-hidden rounded-2xl bg-slate-200 shadow-lg">
+          <div className="relative mt-6 h-[300px] md:h-[600px] w-full overflow-hidden rounded-md bg-slate-200 shadow-lg">
             <SafeProjectImage
               src={getProjectImage(project)}
               alt={project.name}
@@ -138,7 +138,7 @@ export default function ProjectDetailPage({ params }: Props) {
           </div>
         </header>
 
-        <section className="grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 md:grid-cols-2 lg:grid-cols-4">
+        <section className="grid grid-cols-1 gap-6 rounded-md border border-slate-200 bg-white p-6 shadow-sm sm:p-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <span className="block text-xs uppercase tracking-wider text-slate-500">
               Company
@@ -174,7 +174,7 @@ export default function ProjectDetailPage({ params }: Props) {
         </section>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <section className="rounded-md border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="mb-4 text-xl font-bold text-slate-900">
               Scope of Work
             </h2>
@@ -197,7 +197,7 @@ export default function ProjectDetailPage({ params }: Props) {
             )}
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <section className="rounded-md border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="mb-4 text-xl font-bold text-slate-900">
               Project Highlights
             </h2>
@@ -227,7 +227,7 @@ export default function ProjectDetailPage({ params }: Props) {
               {gallery.map((img, index) => (
                 <div
                   key={`${img}-${index}`}
-                  className="relative h-88 overflow-hidden rounded-xl bg-slate-200"
+                  className="relative h-88 overflow-hidden rounded-md bg-slate-200"
                 >
                   <SafeProjectImage
                     src={img}
@@ -241,7 +241,7 @@ export default function ProjectDetailPage({ params }: Props) {
           </section>
         )}
 
-        <section className="space-y-6 rounded-2xl bg-slate-900 p-8 text-center text-white sm:p-12">
+        <section className="space-y-6 rounded-md bg-slate-900 p-8 text-center text-white sm:p-12">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Have a similar project in mind?
           </h2>
@@ -252,7 +252,7 @@ export default function ProjectDetailPage({ params }: Props) {
           <div>
             <Link
               href="/contact"
-              className="inline-block rounded-lg bg-amber-500 px-8 py-3 font-semibold text-slate-900 transition-colors hover:bg-amber-400"
+              className="inline-block rounded-md bg-amber-500 px-8 py-3 font-semibold text-slate-900 transition-colors hover:bg-amber-400"
             >
               Get In Touch
             </Link>

@@ -61,11 +61,12 @@ export default function GalleryPage() {
       <AboutBanner
         title="Project Gallery & Operations"
         description="A visual showcase of our structural craftsmanship, ongoing site operations, sub-contracting precision, and corporate growth across AM Management Group."
+        descriptionClassName="hidden md:block"
       />
       <section className="bg-background py-10 sm:py-14">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-9 max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+            <h2 className="text-3xl font-bold text-primary md:text-4xl uppercase">
               Our Work In Pictures
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
@@ -98,12 +99,12 @@ export default function GalleryPage() {
               <p className="text-sm">Loading gallery...</p>
             </div>
           ) : error ? (
-            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
+            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-md border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
               <AlertCircle className="mt-0.5 size-5 shrink-0" />
               <p>{error}</p>
             </div>
           ) : images.length === 0 ? (
-            <div className="rounded-xl border border-border bg-card p-10 text-center text-muted-foreground">
+            <div className="rounded-md border border-border bg-card p-10 text-center text-muted-foreground">
               No published gallery images found.
             </div>
           ) : (
@@ -112,7 +113,7 @@ export default function GalleryPage() {
                 {images.map((image) => (
                   <article
                     key={image.id}
-                    className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-muted shadow-sm"
+                    className="group relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-muted shadow-sm"
                   >
                     <Image
                       src={image.imageUrl}

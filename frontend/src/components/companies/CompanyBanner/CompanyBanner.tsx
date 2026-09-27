@@ -35,15 +35,6 @@ const CompanyBanner = ({ company }: CompanyBannerProps) => {
 
       {/* 2. Content Layer (z-10 ensures it sits above image and overlay) */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Link */}
-        <Link
-          href="/companies"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
-        >
-          <ArrowLeft size={17} />
-          All Companies
-        </Link>
-
         <div className="max-w-4xl">
           {/* Category Tag & Number */}
           <div className="flex items-center gap-3">
@@ -53,34 +44,34 @@ const CompanyBanner = ({ company }: CompanyBannerProps) => {
               </span>
             )}
 
-            <span className="h-px w-10 bg-white" />
+            <span className="h-px w-10 bg-white hidden md:block" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-300">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-300 hidden md:block">
               {company?.category || "Group Subsidiary"}
             </span>
           </div>
 
           {/* Company Title */}
-          <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-5xl text-white">
+          <h1 className="mt-6 text-4xl uppercase font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-5xl text-white text-center md:text-left">
             {company?.name}
           </h1>
 
           {/* Subtitle / Short Tagline */}
           {company?.description && (
-            <p className="mt-4 text-sm font-semibold text-white sm:text-base">
+            <p className="mt-4 text-sm font-semibold text-white sm:text-base hidden md:block">
               {company.description}
             </p>
           )}
 
           {/* Short Description */}
           {company?.shortDescription && (
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg hidden md:block">
               {company.shortDescription}
             </p>
           )}
 
           {/* Action Buttons */}
-          <div className="mt-8  hidden md:flex flex-wrap gap-4">
+          <div className="mt-8  hidden md:flex flex-wrap gap-4 hidden md:block">
             <a
               href="#services"
               className="inline-flex items-center gap-2 rounded-xl bg-secondary/90 px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-secondary/60 shadow-lg"

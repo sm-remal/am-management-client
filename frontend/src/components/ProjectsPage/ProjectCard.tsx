@@ -9,7 +9,7 @@ import SafeProjectImage from "./SafeProjectImage";
 
 export default function ProjectCard({ project }: { project: ProjectRecord }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
+    <div className="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
       <div className="relative h-56 w-full bg-slate-200">
         <SafeProjectImage
           src={getProjectImage(project)}
@@ -46,7 +46,7 @@ export default function ProjectCard({ project }: { project: ProjectRecord }) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+          className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800"
         >
           View Case Study &rarr;
         </Link>

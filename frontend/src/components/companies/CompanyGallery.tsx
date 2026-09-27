@@ -67,11 +67,11 @@ const CompanyGallery = ({ company }: CompanyGalleryProps) => {
             <p className="text-sm">Loading gallery...</p>
           </div>
         ) : error ? (
-          <div className="rounded-xl border border-destructive/30 bg-destructive/10 p-5 text-sm text-destructive">
+          <div className="rounded-md border border-destructive/30 bg-destructive/10 p-5 text-sm text-destructive">
             {error}
           </div>
         ) : images.length === 0 ? (
-          <div className="rounded-xl border border-border bg-background p-10 text-center text-muted-foreground">
+          <div className="rounded-md border border-border bg-background p-10 text-center text-muted-foreground">
             No gallery images available for {company.name} yet.
           </div>
         ) : (
@@ -79,7 +79,7 @@ const CompanyGallery = ({ company }: CompanyGalleryProps) => {
             {images.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative overflow-hidden rounded-2xl ${
+                className={`group relative overflow-hidden rounded-md ${
                   index === 0 ? "md:col-span-2" : ""
                 }`}
               >
