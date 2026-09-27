@@ -101,7 +101,7 @@ const CompaniesSection = () => {
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-primary lg:text-4xl">
             EXPLORE OUR COMPANIES
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
             Explore the specialized companies operating under the umbrella of AM
             Management Group Sdn. Bhd. and discover their areas of expertise,
             services and business operations.
@@ -180,11 +180,11 @@ const CompanyCard = ({ company }: { company: CompanyRecord }) => {
 
         {/* Card Content */}
         <div className="absolute inset-0 z-10 flex flex-col p-4 sm:p-5">
-          <div className="h-[68px] sm:h-[70px] md:h-[72px] pr-12 sm:pr-13 md:pr-14 lg:pr-14 xl:pr-15">
-            <h3 className="text-[16px] sm:text-[17px] md:text-[18px] font-bold tracking-tight text-[#111827] leading-snug line-clamp-1">
+          <div className="h-[78px] sm:h-[82px] md:h-[86px] pr-12 sm:pr-13 md:pr-14 lg:pr-14 xl:pr-15">
+            <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-bold tracking-tight text-[#111827] leading-snug line-clamp-1">
               {company.name}
             </h3>
-            <p className="mt-1 text-[11.5px] sm:text-[12px] md:text-[12.5px] leading-relaxed text-[#6B7280] font-normal line-clamp-2">
+            <p className="mt-1.5 text-[13.5px] sm:text-[14px] md:text-[15px] leading-relaxed text-[#6B7280] font-normal line-clamp-2">
               {company.shortDescription ||
                 company.description ||
                 getCategoryLabel(company.category)}

@@ -67,10 +67,10 @@ export default function BusinessSectors() {
                   <Icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-bold leading-snug text-white">
+                  <h3 className="mb-2 text-xl font-bold leading-snug text-white md:text-[1.35rem]">
                     {sec.title}
                   </h3>
-                  <p className="text-sm leading-6 text-white">
+                  <p className="text-base leading-7 text-white">
                     {sec.desc}
                   </p> 
                 </div>

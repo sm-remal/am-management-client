@@ -45,8 +45,8 @@ export default function CorporateValues() {
                 <div className="w-14 h-14 bg-white/20 text-white rounded-md flex items-center justify-center mx-auto">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-bold text-xl text-white">{v.title}</h3>
-                <p className="text-sm text-white leading-relaxed">
+                <h3 className="font-bold text-2xl text-white">{v.title}</h3>
+                <p className="text-base text-white leading-7">
                   {v.desc}
                 </p>
               </div>

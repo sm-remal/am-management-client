@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
     <span className="text-primary">AM MANAGEMENT GROUP</span>
   </h2>
 
-  <p className="mx-auto mt-4 max-w-4xl text-sm leading-7 text-slate-600 md:text-base">
+  <p className="mx-auto mt-4 max-w-4xl text-base leading-8 text-slate-600 md:text-lg">
    AM Management Group delivers reliable and sustainable business
     solutions across multiple sectors in Malaysia.
   </p>
@@ -90,10 +90,10 @@ export default function WhyChooseUs() {
                       <Icon className={`h-5 w-5 ${pt.iconColor}`} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900 text-[15px] leading-snug">
+                      <h3 className="font-bold text-slate-900 text-[17px] leading-snug md:text-[18px]">
                         {pt.title}
                       </h3>
-                      <p className="mt-1.5 text-slate-600 text-[13px] leading-relaxed">
+                      <p className="mt-1.5 text-slate-600 text-[15px] leading-relaxed md:text-base">
                         {pt.desc}
                       </p>
                     </div>

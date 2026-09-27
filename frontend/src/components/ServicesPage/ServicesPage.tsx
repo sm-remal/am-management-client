@@ -90,8 +90,8 @@ export default function ServicesPage() {
                   onClick={() => changeCategory(category.value)}
                   className={
                     selectedCategory === category.value
-                      ? "rounded-full border border-primary bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-sm"
-                      : "rounded-full border border-border bg-card px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                      ? "rounded-full border border-primary bg-primary px-5 py-3 text-base font-medium text-primary-foreground shadow-sm"
+                      : "rounded-full border border-border bg-card px-5 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
                   }
                 >
                   {category.label}
@@ -106,8 +106,8 @@ export default function ServicesPage() {
                 onClick={() => setIsFilterOpen((open) => !open)}
                 className={
                   selectedCategory !== "ALL"
-                    ? "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-primary bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm"
-                    : "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-border bg-card px-4 text-sm font-semibold text-foreground shadow-sm"
+                    ? "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-primary bg-primary px-4 text-base font-semibold text-primary-foreground shadow-sm"
+                    : "flex h-12 w-full md:w-50 items-center justify-between rounded-md border border-border bg-card px-4 text-base font-semibold text-foreground shadow-sm"
                 }
               >
                 <span className="flex items-center gap-2">
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                       key={category.value}
                       type="button"
                       onClick={() => changeCategory(category.value)}
-                      className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                      className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium text-foreground transition-colors hover:bg-muted"
                     >
                       {category.label}
                       {selectedCategory === category.value && (
@@ -146,10 +146,10 @@ export default function ServicesPage() {
           {isLoading ? (
             <div className="flex min-h-64 flex-col items-center justify-center text-muted-foreground">
               <Loader2 className="mb-3 size-8 animate-spin text-primary" />
-              <p className="text-sm">Loading services...</p>
+              <p className="text-base">Loading services...</p>
             </div>
           ) : error ? (
-            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-md border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
+            <div className="mx-auto flex max-w-xl items-start gap-3 rounded-md border border-destructive/30 bg-destructive/10 p-4 text-base text-destructive">
               <AlertCircle className="mt-0.5 size-5 shrink-0" />
               <p>{error}</p>
             </div>
@@ -179,21 +179,21 @@ export default function ServicesPage() {
                         </div>
                       )}
                     </div>
-                    <div className="flex flex-1 flex-col p-5 sm:p-6">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-secondary">
+                    <div className="flex flex-1 flex-col p-6">
+                      <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
                         {service.company?.name ?? "AM Management Group"}
                       </p>
-                      <h3 className="mt-2 line-clamp-2 text-xl font-bold text-foreground">
+                      <h3 className="mt-2 line-clamp-2 text-2xl font-bold text-foreground">
                         {service.title}
                       </h3>
-                      <p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">
+                      <p className="mt-3 flex-1 text-base leading-8 text-muted-foreground">
                         {service.description ||
                           "Professional service offered by our group companies."}
                       </p>
                       {service.company?.slug && (
                         <Link
                           href={"/companies/" + service.company.slug}
-                          className="mt-5 inline-flex text-sm font-semibold text-primary hover:underline"
+                          className="mt-5 inline-flex text-base font-semibold text-primary hover:underline"
                         >
                           View company
                         </Link>

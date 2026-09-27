@@ -114,11 +114,11 @@ export default function CareersPage() {
                     <Icon className="size-6" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-primary group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2 text-base leading-7 text-muted-foreground">
                     {item.description}
                   </p>
 
@@ -133,19 +133,19 @@ export default function CareersPage() {
         <section id="open-positions" className="scroll-mt-10">
           <div className="mb-10 flex flex-col justify-between gap-4 border-b border-border pb-6 sm:flex-row sm:items-end">
             <div>
-              <span className="text-xs font-extrabold uppercase tracking-widest text-secondary">
+              <span className="text-sm font-extrabold uppercase tracking-widest text-secondary">
                 Opportunities
               </span>
               <h2 className="mt-1 text-3xl font-bold text-primary uppercase">
                 Available Positions
               </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-1 text-base text-muted-foreground">
                 Find a role that matches your skills and career goals.
               </p>
             </div>
 
             {!loading && (
-              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
                 {jobs.length} open position{jobs.length !== 1 ? "s" : ""}
               </span>
             )}
@@ -154,23 +154,23 @@ export default function CareersPage() {
           {loading ? (
             <div className="rounded-md border border-border bg-card p-12 text-center shadow-sm">
               <div className="mx-auto size-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-              <p className="mt-4 text-sm font-medium text-muted-foreground">
+              <p className="mt-4 text-base font-medium text-muted-foreground">
                 Loading available positions...
               </p>
             </div>
           ) : error ? (
-            <div className="rounded-md border border-destructive/30 bg-destructive/10 p-6 text-sm font-medium text-destructive">
+            <div className="rounded-md border border-destructive/30 bg-destructive/10 p-6 text-base font-medium text-destructive">
               {error}
             </div>
           ) : jobs.length === 0 ? (
             <div className="rounded-md border border-border bg-card p-12 text-center shadow-sm">
               <BriefcaseBusiness className="mx-auto size-12 text-muted-foreground/40" />
 
-              <h3 className="mt-4 text-lg font-bold text-foreground">
+              <h3 className="mt-4 text-xl font-bold text-foreground">
                 No open positions at the moment
               </h3>
 
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-base text-muted-foreground">
                 We are not currently hiring for any published positions. Please
                 check back again soon.
               </p>
@@ -188,11 +188,11 @@ export default function CareersPage() {
                     <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                       <div className="min-w-0 space-y-3">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="rounded-md bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary">
+                          <span className="rounded-md bg-primary/10 px-2.5 py-1 text-sm font-bold text-primary">
                             {job.company?.name ?? "Group Company"}
                           </span>
 
-                          <span className="rounded-md bg-secondary/10 px-2.5 py-1 text-xs font-bold text-secondary">
+                          <span className="rounded-md bg-secondary/10 px-2.5 py-1 text-sm font-bold text-secondary">
                             {employmentLabels[job.employmentType]}
                           </span>
                         </div>
@@ -201,7 +201,7 @@ export default function CareersPage() {
                           {job.title}
                         </h3>
 
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-medium text-muted-foreground">
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-medium text-muted-foreground">
                           {job.location && (
                             <span className="flex items-center gap-1">
                               📍 {job.location}
@@ -222,7 +222,7 @@ export default function CareersPage() {
                         </div>
 
                         {job.description && (
-                          <p className="line-clamp-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                          <p className="line-clamp-2 max-w-3xl text-base leading-7 text-muted-foreground">
                             {job.description}
                           </p>
                         )}
@@ -232,7 +232,7 @@ export default function CareersPage() {
                         href={`/careers/${job.slug}`}
                         className={buttonVariants({
                           className:
-                            "shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors",
+                            "shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors text-base",
                         })}
                       >
                         View Position
@@ -265,15 +265,15 @@ export default function CareersPage() {
                 key={number}
                 className="relative rounded-md border border-border/50 bg-card p-5 shadow-sm"
               >
-                <span className="text-2xl font-black text-secondary">
+                <span className="text-3xl font-black text-secondary">
                   {number}
                 </span>
 
-                <h3 className="mt-2 text-lg font-bold text-primary">
+                <h3 className="mt-2 text-xl font-bold text-primary">
                   {title}
                 </h3>
 
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-base leading-7 text-muted-foreground">
                   {description}
                 </p>
               </div>
@@ -288,7 +288,7 @@ export default function CareersPage() {
               Ready to take the next step?
             </h2>
 
-            <p className="mt-4 text-base opacity-90 sm:text-lg">
+            <p className="mt-4 text-lg opacity-90 sm:text-xl">
               Explore our available positions and find an opportunity where you
               can make a meaningful contribution.
             </p>
@@ -299,7 +299,7 @@ export default function CareersPage() {
                 variant: "secondary",
                 size: "lg",
                 className:
-                  "mt-8 bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg font-bold",
+                  "mt-8 bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg font-bold text-base",
               })}
             >
               Explore Open Positions

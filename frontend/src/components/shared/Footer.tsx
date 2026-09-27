@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="brightness-0 invert">
               <Logo />
             </div>
-            <p className="text-sm leading-relaxed text-blue-100/80">
+            <p className="text-base leading-7 text-blue-100/80">
               {siteDescription}
             </p>
             <div className="flex items-center gap-3 pt-2">
@@ -39,10 +39,10 @@ const Footer = () => {
                   href={settings.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF size={16} />
+                  <FaFacebookF size={20} />
                 </a>
               )}
               {settings.linkedinUrl && (
@@ -50,10 +50,10 @@ const Footer = () => {
                   href={settings.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn size={16} />
+                  <FaLinkedinIn size={20} />
                 </a>
               )}
               {settings.instagramUrl && (
@@ -61,10 +61,10 @@ const Footer = () => {
                   href={settings.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
                   aria-label="Instagram"
                 >
-                  <FaInstagram size={16} />
+                  <FaInstagram size={20} />
                 </a>
               )}
               {settings.twitterUrl && (
@@ -72,10 +72,10 @@ const Footer = () => {
                   href={settings.twitterUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-white transition-colors"
                   aria-label="Twitter / X"
                 >
-                  <FaTwitter size={16} />
+                  <FaTwitter size={20} />
                 </a>
               )}
             </div>
@@ -83,10 +83,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-base font-semibold text-white uppercase tracking-wider mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-[14px]">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -137,10 +137,10 @@ const Footer = () => {
 
           {/* Business Divisions / Group Entities */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-base font-semibold text-white uppercase tracking-wider mb-4">
               Services
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-[14px]">
               <li>
                 <Link
                   href="/companies/bm-magnitude-services"
@@ -186,14 +186,14 @@ const Footer = () => {
 
           {/* Corporate Contact Info */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-base font-semibold text-white uppercase tracking-wider mb-4">
               Corporate Office
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-4 text-[14px]">
               <li className="flex items-start gap-3">
                 <MdLocationOn
                   className="text-blue-200 mt-0.5 shrink-0"
-                  size={18}
+                  size={20}
                 />
                 <span>
                   {settings.siteName} Sdn. Bhd.
@@ -202,7 +202,7 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <MdPhone className="text-blue-200 shrink-0" size={18} />
+                <MdPhone className="text-blue-200 shrink-0" size={20} />
                 <a
                   href={phoneHref(settings.contactPhone)}
                   className="hover:text-white transition-colors"
@@ -212,7 +212,7 @@ const Footer = () => {
               </li>
               {settings.whatsappUrl && (
                 <li className="flex items-center gap-3">
-                  <FaWhatsapp className="text-blue-200 shrink-0" size={18} />
+                  <FaWhatsapp className="text-blue-200 shrink-0" size={20} />
                   <a
                     href={settings.whatsappUrl}
                     target="_blank"
@@ -224,7 +224,7 @@ const Footer = () => {
                 </li>
               )}
               <li className="flex items-center gap-3">
-                <MdEmail className="text-blue-200 shrink-0" size={18} />
+                <MdEmail className="text-blue-200 shrink-0" size={20} />
                 <a
                   href={`mailto:${settings.contactEmail}`}
                   className="hover:text-white transition-colors"
@@ -239,7 +239,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-1 gap-3 text-center text-sm font-medium text-white md:grid-cols-3 md:items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-1 gap-3 text-center text-[15px] font-medium text-white md:grid-cols-3 md:items-center">
           <p className="justify-self-center px-1.5 py-0.5 md:justify-self-start">
             Copyright &copy; {new Date().getFullYear()} {settings.siteName}. All
             Rights Reserved.
