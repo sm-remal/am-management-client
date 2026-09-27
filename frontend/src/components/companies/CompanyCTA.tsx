@@ -21,7 +21,7 @@ const CompanyCTA = ({ company }: CompanyCTAProps) => {
               </span>
             </div>
 
-            <h2 className="text-4xl font-bold leading-tight sm:text-5xl">
+            <h2 className="text-4xl font-bold leading-tight sm:text-4xl uppercase text-primary">
               Let&apos;s discuss your next opportunity.
             </h2>
 

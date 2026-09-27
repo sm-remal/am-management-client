@@ -90,7 +90,7 @@ const InquiryFormCard = ({
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-      <h2 className="text-2xl font-bold text-slate-950">Send Us An Inquiry</h2>
+      <h2 className="text-2xl font-bold text-primary">Send Us An Inquiry</h2>
       <p className="mt-3 text-sm text-slate-500">
         Fill out the form below and our team will respond within 24 business
         hours.

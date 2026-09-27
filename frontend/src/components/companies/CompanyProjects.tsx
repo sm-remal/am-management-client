@@ -11,7 +11,7 @@ interface CompanyProjectsProps {
 
 const CompanyProjects = ({ company }: CompanyProjectsProps) => {
   return (
-    <section className="bg-background py-20 sm:py-24 lg:py-28">
+    <section className="bg-background py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <div className="mb-5 flex items-center gap-3">
@@ -22,7 +22,7 @@ const CompanyProjects = ({ company }: CompanyProjectsProps) => {
             </span>
           </div>
 
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl lg:text-4xl uppercase">
             Work that speaks for itself.
           </h2>
         </div>
@@ -44,7 +44,7 @@ const CompanyProjects = ({ company }: CompanyProjectsProps) => {
                   Featured Project
                 </span>
 
-                <h3 className="mt-5 text-2xl font-bold text-foreground sm:text-3xl">
+                <h3 className="mt-5 text-2xl font-bold text-primary sm:text-3xl uppercase">
                   Project Showcase
                 </h3>
 

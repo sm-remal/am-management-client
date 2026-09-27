@@ -85,7 +85,7 @@ export default function CompanyCareersSection({
   }, [jobs, referenceTime]);
 
   return (
-    <section className="border-b border-border bg-muted/30 py-10 sm:py-15">
+    <section className="border-b border-border bg-muted/30 py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
@@ -97,7 +97,7 @@ export default function CompanyCareersSection({
               </span>
             </div>
 
-            <h2 className="text-2xl flex flex-col gap-3 font-bold text-foreground sm:text-4xl">
+            <h2 className="text-2xl flex flex-col gap-3 font-bold text-primary sm:text-4xl uppercase">
               <span>Open positions at</span>
               <span className="text-secondary">{company.name}</span>
             </h2>

@@ -40,7 +40,7 @@ const CompanyGallery = ({ company }: CompanyGalleryProps) => {
   }, [company.slug]);
 
   return (
-    <section className="bg-muted/30 py-10 sm:py-15 ">
+    <section className="bg-muted/30 py-10 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -51,7 +51,7 @@ const CompanyGallery = ({ company }: CompanyGalleryProps) => {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="text-3xl font-bold text-primary sm:text-4xl uppercase">
               Inside our work.
             </h2>
           </div>

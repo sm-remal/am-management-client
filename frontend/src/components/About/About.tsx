@@ -8,6 +8,7 @@ const About = () => {
       <AboutBanner
         title="About AM Management Group"
         description="A Malaysian-based company with more than a decade of experience, delivering construction, property development and related business solutions with a strong commitment to quality, reliability and sustainable growth."
+        descriptionClassName="hidden md:block"
       />
 
       <AboutContent />

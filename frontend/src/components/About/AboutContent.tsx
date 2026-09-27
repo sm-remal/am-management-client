@@ -50,7 +50,7 @@ export function CompanyIntroduction() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-background py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -62,7 +62,7 @@ export function CompanyIntroduction() {
               </span>
             </div>
 
-            <h2 className="max-w-4xl text-4xl font-bold leading-[1.2] text-foreground sm:text-5xl lg:text-5xl">
+            <h2 className="max-w-4xl text-3xl md:text-4xl font-bold uppercase leading-[1.2] text-primary">
               Building a stronger foundation for{" "}
               <span className="text-primary">long-term growth.</span>
             </h2>
@@ -90,7 +90,7 @@ export function CompanyIntroduction() {
                   : ""
               }`}
             >
-              <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-primary">
                 {stat.value}
               </div>
 
@@ -145,7 +145,7 @@ export function OurStory() {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold leading-tight text-primary uppercase sm:text-4xl lg:text-4xl">
               Experience, discipline and a clear vision for the future.
             </h2>
 
@@ -243,7 +243,7 @@ export function BusinessAreas() {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-4xl uppercase">
               Built around capability.
               <br />
               Driven by results.
@@ -276,7 +276,7 @@ export function BusinessAreas() {
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold text-foreground">
+                      <h3 className="text-xl font-bold text-primary">
                         {area.title}
                       </h3>
 
@@ -302,15 +302,6 @@ export function BusinessAreas() {
   );
 }
 
-/* =========================================================
-   SELECTED PROJECT
-========================================================= */
-
-
-
-/* =========================================================
-   CORPORATE JOURNEY
-========================================================= */
 
 export function CorporateTimeline() {
   const timeline = [
@@ -353,7 +344,7 @@ export function CorporateTimeline() {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-4xl uppercase">
               A journey shaped by experience.
             </h2>
 
@@ -381,7 +372,7 @@ export function CorporateTimeline() {
                   </div>
 
                   <div className="border-b border-border pb-7">
-                    <h3 className="text-xl font-bold text-foreground">
+                    <h3 className="text-xl font-bold text-primary">
                       {item.title}
                     </h3>
 

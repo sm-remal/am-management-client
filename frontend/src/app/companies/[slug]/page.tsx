@@ -43,7 +43,7 @@ export default async function CompanyDetailsPage({ params }: PageProps) {
       {/* =====================================================
           COMPANY OVERVIEW
       ===================================================== */}
-      <section className="border-b border-border bg-background py-20 sm:py-24">
+      <section className="border-b border-border bg-background py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
@@ -55,7 +55,7 @@ export default async function CompanyDetailsPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl uppercase md:leading-12.5 text-primary">
                 Focused on delivering value through expertise.
               </h2>
             </div>

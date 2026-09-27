@@ -43,7 +43,7 @@ const CompanyServices = ({ company }: CompanyServicesProps) => {
   }, [company.slug]);
 
   return (
-    <section className="bg-muted/30 py-20 sm:py-24 lg:py-28">
+    <section className="bg-muted/30 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -54,7 +54,7 @@ const CompanyServices = ({ company }: CompanyServicesProps) => {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="text-3xl font-bold text-primary sm:text-4xl uppercase">
               What we do
             </h2>
           </div>

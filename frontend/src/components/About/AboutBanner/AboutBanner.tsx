@@ -4,11 +4,16 @@ import Image from "next/image"; // Next.js Image component import করুন
 interface AboutData {
   title: string;
   description: string;
+  descriptionClassName?: string;
 }
 
 import aboutBanner from "../../../assets/banner/About_banner.jpg";
 
-const AboutBanner: React.FC<AboutData> = ({ title, description }) => {
+const AboutBanner: React.FC<AboutData> = ({
+  title,
+  description,
+  descriptionClassName = "",
+}) => {
   return (
     <div className="relative text-white h-[240px] md:h-[290px] px-4 overflow-hidden flex flex-col items-center justify-center text-center">
       {/* Next.js Optimized Background Image */}
@@ -35,7 +40,9 @@ const AboutBanner: React.FC<AboutData> = ({ title, description }) => {
         </h1>
 
         {/* Subtitle / Effective Date */}
-        <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base max-w-3xl mx-auto font-normal leading-relaxed text-white/90 tracking-wide">
+        <p
+          className={`mt-3 sm:mt-4 text-xs sm:text-sm md:text-base max-w-3xl mx-auto font-normal leading-relaxed text-white/90 tracking-wide ${descriptionClassName}`}
+        >
           {description}
         </p>
       </div>
