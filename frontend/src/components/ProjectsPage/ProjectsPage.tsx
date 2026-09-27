@@ -39,7 +39,7 @@ export default function ProjectsPage() {
       try {
         const result = await getPublishedProjects({
           page,
-          limit: 9,
+          limit: 12,
           status: selectedStatus,
           category: selectedIndustry,
         });

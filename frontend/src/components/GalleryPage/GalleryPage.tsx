@@ -25,7 +25,7 @@ export default function GalleryPage() {
         const [result, categoryResult] = await Promise.all([
           getPublishedGalleryImages({
             page,
-            limit: 15,
+            limit: 20,
             category: selectedCategory === "ALL" ? undefined : selectedCategory,
           }),
           page === 1

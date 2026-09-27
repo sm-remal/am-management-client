@@ -45,7 +45,7 @@ export default function ServicesPage() {
       try {
         const result = await getPublishedServices({
           page,
-          limit: 9,
+          limit: 12,
           category: selectedCategory,
         });
         setServices(result.data?.services ?? []);
