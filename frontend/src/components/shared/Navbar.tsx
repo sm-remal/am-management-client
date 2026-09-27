@@ -261,7 +261,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "px-3.5 py-2 text-sm font-medium rounded-md transition-colors",
+                  "px-3.5 py-2 text-base font-medium rounded-md transition-colors",
                   isActive(link.href)
                     ? "text-slate-900 bg-slate-100"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -277,7 +277,7 @@ const Navbar = () => {
                 render={
                   <button
                     className={cn(
-                      "flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-md transition-colors outline-none",
+                      "flex items-center gap-1 px-3.5 py-2 text-base font-medium rounded-md transition-colors outline-none",
                       pathname.startsWith("/companies")
                         ? "text-slate-900 bg-slate-100"
                         : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -295,7 +295,7 @@ const Navbar = () => {
                 sideOffset={8}
               >
                 <div className="px-2 py-1.5 mb-1">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                  <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider">
                     Our Companies
                   </p>
                 </div>
@@ -306,10 +306,10 @@ const Navbar = () => {
                     className="flex flex-col items-start gap-0.5 px-2 py-2.5 cursor-pointer"
                     onClick={() => router.push(`/companies/${company.slug}`)}
                   >
-                    <span className="text-sm font-medium text-slate-900">
+                    <span className="text-base font-medium text-slate-900">
                       {company.name}
                     </span>
-                    <span className="text-xs text-slate-500">
+                    <span className="text-sm text-slate-500">
                       {categoryLabels[company.category]}
                     </span>
                   </DropdownMenuItem>
@@ -317,7 +317,7 @@ const Navbar = () => {
 
                 <div className="border-t border-slate-100 mt-1 pt-1">
                   <DropdownMenuItem
-                    className="justify-center text-sm font-medium text-slate-700 cursor-pointer"
+                    className="justify-center text-base font-medium text-slate-700 cursor-pointer"
                     onClick={() => router.push("/companies")}
                   >
                     View All Companies {"->"}
@@ -331,7 +331,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "px-3.5 py-2 text-sm font-medium rounded-md transition-colors",
+                  "px-3.5 py-2 text-base font-medium rounded-md transition-colors",
                   isActive(link.href)
                     ? "text-slate-900 bg-slate-100"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
@@ -362,7 +362,7 @@ const Navbar = () => {
                     <Button
                       size="sm"
                       className={cn(
-                        "rounded-full px-5 py-3 font-medium transition-all cursor-pointer",
+                        "rounded-full px-5 py-3 text-base font-medium transition-all cursor-pointer",
                         isScrolled
                           ? "bg-slate-900 border-2 border-primary text-white hover:bg-slate-500"
                           : "bg-white border-2 border-primary text-slate-900 hover:bg-primary/10",
@@ -400,10 +400,10 @@ const Navbar = () => {
                 {isLoggedIn ? (
                   <>
                     <div className="mb-1 px-2 py-1.5">
-                      <p className="truncate text-sm font-semibold text-slate-900">
+                      <p className="truncate text-base font-semibold text-slate-900">
                         {user?.name || "Account"}
                       </p>
-                      <p className="truncate text-xs text-slate-500">
+                      <p className="truncate text-sm text-slate-500">
                         {user?.email || "Signed in"}
                       </p>
                     </div>
@@ -418,10 +418,10 @@ const Navbar = () => {
                         <LayoutDashboard className="h-4 w-4" />
                       </span>
                       <span className="flex flex-col items-start">
-                        <span className="text-sm font-semibold text-slate-900">
+                        <span className="text-base font-semibold text-slate-900">
                           Dashboard
                         </span>
-                        <span className="text-xs text-slate-500">
+                        <span className="text-sm text-slate-500">
                           Go to admin panel
                         </span>
                       </span>
@@ -437,10 +437,10 @@ const Navbar = () => {
                         <LogOut className="h-4 w-4" />
                       </span>
                       <span className="flex flex-col items-start">
-                        <span className="text-sm font-semibold text-slate-900">
+                        <span className="text-base font-semibold text-slate-900">
                           Logout
                         </span>
-                        <span className="text-xs text-slate-500">
+                        <span className="text-sm text-slate-500">
                           Sign out from account
                         </span>
                       </span>
@@ -449,7 +449,7 @@ const Navbar = () => {
                 ) : (
                   <>
                     <div className="px-2 py-1.5 mb-1">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">
                         Auth Access
                       </p>
                     </div>
@@ -470,10 +470,10 @@ const Navbar = () => {
                             <Icon className="h-4 w-4" />
                           </span>
                           <span className="flex flex-col items-start">
-                            <span className="text-sm font-semibold text-slate-900">
+                            <span className="text-base font-semibold text-slate-900">
                               {option.name}
                             </span>
-                            <span className="text-xs text-slate-500">
+                            <span className="text-sm text-slate-500">
                               {option.description}
                             </span>
                           </span>
@@ -504,7 +504,7 @@ const Navbar = () => {
 
               <SheetContent side="right" className="w-full sm:max-w-sm p-0">
                 <SheetHeader className="border-b border-slate-100 px-6 py-5">
-                  <SheetTitle className="text-left text-base font-semibold">
+                  <SheetTitle className="text-left text-lg font-semibold">
                     {settings.siteName}
                   </SheetTitle>
                 </SheetHeader>
@@ -517,7 +517,7 @@ const Navbar = () => {
                         href={link.href}
                         onClick={() => setIsMobileOpen(false)}
                         className={cn(
-                          "block px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                          "block px-3 py-2.5 text-base font-medium rounded-lg transition-colors",
                           isActive(link.href)
                             ? "bg-slate-100 text-slate-900"
                             : "text-slate-700 hover:bg-slate-50",
@@ -528,7 +528,7 @@ const Navbar = () => {
                     ))}
 
                     <div className="pt-3 mt-2 border-t border-slate-100">
-                      <p className="px-3 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                      <p className="px-3 py-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">
                         Our Companies
                       </p>
                       <div className="space-y-0.5">
@@ -539,10 +539,10 @@ const Navbar = () => {
                             onClick={() => setIsMobileOpen(false)}
                             className="block px-3 py-2.5 rounded-lg hover:bg-slate-50"
                           >
-                            <span className="block text-sm font-medium text-slate-800">
+                            <span className="block text-base font-medium text-slate-800">
                               {company.name}
                             </span>
-                            <span className="block text-xs text-slate-500 mt-0.5">
+                            <span className="block text-sm text-slate-500 mt-0.5">
                               {categoryLabels[company.category]}
                             </span>
                           </Link>
@@ -550,7 +550,7 @@ const Navbar = () => {
                         <Link
                           href="/companies"
                           onClick={() => setIsMobileOpen(false)}
-                          className="block px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
+                          className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
                         >
                           View All Companies {"->"}
                         </Link>
@@ -564,7 +564,7 @@ const Navbar = () => {
                       <div className="space-y-2">
                         <div className="flex items-center gap-3 rounded-lg bg-slate-50 p-3">
                           <span
-                            className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-slate-200 bg-cover bg-center text-sm font-bold text-slate-700"
+                            className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-slate-200 bg-cover bg-center text-base font-bold text-slate-700"
                             style={
                               user?.avatar
                                 ? { backgroundImage: `url(${user.avatar})` }
@@ -574,10 +574,10 @@ const Navbar = () => {
                             {!user?.avatar && avatarText}
                           </span>
                           <span className="min-w-0">
-                            <span className="block truncate text-sm font-semibold text-slate-900">
+                            <span className="block truncate text-base font-semibold text-slate-900">
                               {user?.name || "Account"}
                             </span>
-                            <span className="block truncate text-xs text-slate-500">
+                            <span className="block truncate text-sm text-slate-500">
                               {user?.email || "Signed in"}
                             </span>
                           </span>
@@ -613,7 +613,7 @@ const Navbar = () => {
                         <DropdownMenuTrigger
                           render={
                             <Button
-                              className="w-full rounded-full cursor-pointer"
+                              className="w-full rounded-full cursor-pointer text-base"
                               size="lg"
                             />
                           }
@@ -629,7 +629,7 @@ const Navbar = () => {
                           className="w-[calc(100vw-2rem)] max-w-sm p-2"
                         >
                           <div className="px-2 py-1.5 mb-1">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">
                               Auth Access
                             </p>
                           </div>
@@ -650,10 +650,10 @@ const Navbar = () => {
                                   <Icon className="h-4 w-4" />
                                 </span>
                                 <span className="flex flex-col items-start">
-                                  <span className="text-sm font-semibold text-slate-900">
+                                  <span className="text-base font-semibold text-slate-900">
                                     {option.name}
                                   </span>
-                                  <span className="text-xs text-slate-500">
+                                  <span className="text-sm text-slate-500">
                                     {option.description}
                                   </span>
                                 </span>
