@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import { IoEyeSharp } from "react-icons/io5";
 import Pagination from "@/components/common/Pagination";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -351,10 +352,13 @@ const InquiryManagement = () => {
                         <Button
                           type="button"
                           variant="outline"
-                          size="sm"
+                          size="icon-sm"
+                          className="size-9 rounded-xs border-sky-200 bg-sky-50 text-sky-700 hover:bg-sky-100 hover:text-sky-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => setSelected(item)}
+                          aria-label="View inquiry"
+                          title="View inquiry"
                         >
-                          View
+                          <IoEyeSharp className="size-5" />
                         </Button>
                         <Button
                           type="button"

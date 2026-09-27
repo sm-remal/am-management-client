@@ -4,7 +4,6 @@ import {
   AlertCircle,
   Award,
   CheckCircle2,
-  Edit3,
   Globe2,
   Loader2,
   Phone,
@@ -14,12 +13,12 @@ import {
   Search,
   Settings,
   Share2,
-  Trash2,
   X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Pagination from "@/components/common/Pagination";
@@ -682,21 +681,25 @@ const SettingsManagement = () => {
                         <Button
                           type="button"
                           variant="outline"
-                          size="sm"
+                          size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(setting)}
+                          aria-label="Edit setting"
+                          title="Edit setting"
                         >
-                          <Edit3 className="size-3.5" />
-                          Edit
+                          <FaEdit className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
-                          size="sm"
+                          size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionSettingId === setting.id}
                           onClick={() => void handleDelete(setting)}
+                          aria-label="Delete setting"
+                          title="Delete setting"
                         >
-                          <Trash2 className="size-3.5" />
-                          Delete
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>

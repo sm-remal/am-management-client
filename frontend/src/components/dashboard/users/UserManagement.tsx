@@ -3,13 +3,11 @@
 import {
   AlertCircle,
   CheckCircle2,
-  Edit3,
   Loader2,
   Plus,
   RefreshCw,
   Search,
   ShieldCheck,
-  Trash2,
   UserCheck,
   UserX,
   Users,
@@ -17,6 +15,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Pagination from "@/components/common/Pagination";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -469,35 +468,41 @@ const UserManagement = () => {
                           <Button
                             type="button"
                             variant="outline"
-                            size="sm"
+                            size="icon-sm"
+                            className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                             onClick={() => handleEdit(user)}
+                            aria-label="Edit user"
+                            title="Edit user"
                           >
-                            <Edit3 className="size-3.5" />
-                            Edit
+                            <FaEdit className="size-4.5" />
                           </Button>
                           <Button
                             type="button"
                             variant="outline"
-                            size="sm"
+                            size="icon-sm"
+                            className={cn("size-9 rounded-xs", user.isActive ? "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800" : "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800", "cursor-pointer disabled:cursor-not-allowed")}
                             disabled={actionUserId === user.id}
                             onClick={() => void handleStatusToggle(user)}
+                            aria-label={user.isActive ? "Disable user" : "Enable user"}
+                            title={user.isActive ? "Disable user" : "Enable user"}
                           >
                             {user.isActive ? (
-                              <UserX className="size-3.5" />
+                              <UserX className="size-5" />
                             ) : (
-                              <UserCheck className="size-3.5" />
+                              <UserCheck className="size-5" />
                             )}
-                            {user.isActive ? "Disable" : "Enable"}
                           </Button>
                           <Button
                             type="button"
                             variant="destructive"
-                            size="sm"
+                            size="icon-sm"
+                            className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionUserId === user.id}
                             onClick={() => void handleDelete(user)}
+                            aria-label="Delete user"
+                            title="Delete user"
                           >
-                            <Trash2 className="size-3.5" />
-                            Delete
+                            <FaTrashAlt className="size-4.5" />
                           </Button>
                         </div>
                       </td>
