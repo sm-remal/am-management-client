@@ -8,10 +8,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch ./src/server.ts",
-    "start": "node dist/server.js",
+    "dev": "node api.js && tsx watch ./src/server.ts",
+    "start": "node api.js && node dist/server.js",
     "vercel-build": "prisma generate && tsup",
-    "build": "prisma generate && tsup"
+    "build": "node api.js && prisma generate && tsup"
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
