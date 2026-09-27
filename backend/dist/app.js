@@ -31529,6 +31529,7 @@ var import_express8 = __toESM(require_express2(), 1);
 import httpStatus17 from "http-status";
 
 // src/modules/setting/setting.service.ts
+import { randomUUID as randomUUID2 } from "crypto";
 import httpStatus16 from "http-status";
 var settingSelect = {
   id: true,
@@ -31667,16 +31668,26 @@ var updateSetting = async (id, payload) => {
 };
 var upsertSettings = async (payload) => {
   try {
-    return await prisma.$transaction(
-      payload.settings.map(
-        (setting) => prisma.setting.upsert({
-          where: { key: setting.key },
-          create: setting,
-          update: { value: setting.value },
-          select: settingSelect
-        })
-      )
-    );
+    const savedSettings = [];
+    for (const setting of payload.settings) {
+      const now = /* @__PURE__ */ new Date();
+      const savedSetting = await prisma.setting.upsert({
+        where: { key: setting.key },
+        create: {
+          id: randomUUID2(),
+          key: setting.key,
+          value: setting.value,
+          updatedAt: now
+        },
+        update: {
+          value: setting.value,
+          updatedAt: now
+        },
+        select: settingSelect
+      });
+      savedSettings.push(savedSetting);
+    }
+    return savedSettings;
   } catch (error) {
     handleSettingError(error, "Unable to save settings");
   }

@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto"
 import httpStatus from "http-status"
 import { Prisma } from "../../../generated/prisma/client"
 import { prisma } from "../../lib/prisma"
@@ -166,16 +167,29 @@ const updateSetting = async (id: string, payload: UpdateSettingPayload) => {
 
 const upsertSettings = async (payload: UpsertSettingsPayload) => {
     try {
-        return await prisma.$transaction(
-            payload.settings.map((setting) =>
-                prisma.setting.upsert({
-                    where: { key: setting.key },
-                    create: setting,
-                    update: { value: setting.value },
-                    select: settingSelect,
-                })
-            )
-        )
+        const savedSettings: Prisma.SettingGetPayload<{ select: typeof settingSelect }>[] = []
+
+        for (const setting of payload.settings) {
+            const now = new Date()
+            const savedSetting = await prisma.setting.upsert({
+                where: { key: setting.key },
+                create: {
+                    id: randomUUID(),
+                    key: setting.key,
+                    value: setting.value,
+                    updatedAt: now,
+                },
+                update: {
+                    value: setting.value,
+                    updatedAt: now,
+                },
+                select: settingSelect,
+            })
+
+            savedSettings.push(savedSetting)
+        }
+
+        return savedSettings
     } catch (error) {
         handleSettingError(error, "Unable to save settings")
     }
@@ -205,3 +219,4 @@ export const SettingService = {
     upsertSettings,
     deleteSetting,
 }
+
