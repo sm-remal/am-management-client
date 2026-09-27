@@ -321,7 +321,7 @@ const ServiceManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Create Service
           </Button>
         </div>
@@ -542,15 +542,18 @@ const ServiceManagement = () => {
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(service)}
                           aria-label="Edit service"
+                          title="Edit service"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className={cn("size-9 rounded-xs", service.isActive ? "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed" : "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed")}
                           disabled={actionServiceId === service.id}
                           onClick={() => void handleToggleActive(service)}
                           aria-label={
@@ -558,22 +561,25 @@ const ServiceManagement = () => {
                               ? "Deactivate service"
                               : "Activate service"
                           }
+                          title={service.isActive ? "Deactivate service" : "Activate service"}
                         >
                           {service.isActive ? (
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           ) : (
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           )}
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionServiceId === service.id}
                           onClick={() => void handleDelete(service)}
                           aria-label="Delete service"
+                          title="Delete service"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -613,7 +619,7 @@ const ServiceManagement = () => {
                 onClick={closeForm}
                 aria-label="Close form"
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -812,7 +818,7 @@ const ServiceManagement = () => {
                   {isSubmitting ? (
                     <Loader2 className="size-4 animate-spin" />
                   ) : (
-                    <BsFillSendFill className="size-4" />
+                    <BsFillSendFill className="size-5" />
                   )}
                   {isEditing ? "Save Changes" : "Create Service"}
                 </Button>

@@ -274,7 +274,7 @@ const NewsManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Create News
           </Button>
         </div>
@@ -443,39 +443,51 @@ const NewsManagement = () => {
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(item)}
+                          aria-label="Edit news"
+                          title="Edit news"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         {item.status === "PUBLISHED" ? (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionId === item.id}
                             onClick={() => void handleStatus(item, "DRAFT")}
+                            aria-label="Unpublish news"
+                            title="Unpublish news"
                           >
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           </Button>
                         ) : (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionId === item.id}
                             onClick={() => void handleStatus(item, "PUBLISHED")}
+                            aria-label="Publish news"
+                            title="Publish news"
                           >
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           </Button>
                         )}
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionId === item.id}
                           onClick={() => void handleDelete(item)}
+                          aria-label="Delete news"
+                          title="Delete news"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -514,7 +526,7 @@ const NewsManagement = () => {
                 size="icon-sm"
                 onClick={closeForm}
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -631,7 +643,7 @@ const NewsManagement = () => {
                   {isSubmitting ? (
                     <Loader2 className="size-4 animate-spin" />
                   ) : (
-                    <BsFillSendFill className="size-4" />
+                    <BsFillSendFill className="size-5" />
                   )}
                   {isEditing ? "Save Changes" : "Create News"}
                 </Button>

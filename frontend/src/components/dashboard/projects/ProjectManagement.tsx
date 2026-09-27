@@ -541,7 +541,7 @@ const ProjectManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Create Project
           </Button>
         </div>
@@ -787,68 +787,79 @@ const ProjectManagement = () => {
                         <Link
                           href={`/projects/${project.slug}`}
                           target="_blank"
-                          className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-background text-sm font-medium text-foreground shadow-xs transition-all hover:bg-muted"
+                          className="inline-flex size-9 items-center justify-center rounded-xs border border-sky-200 bg-sky-50 text-sm font-medium text-sky-700 shadow-xs transition-all cursor-pointer hover:bg-sky-100 hover:text-sky-800"
                           aria-label={`View ${project.name}`}
+                          title={`View ${project.name}`}
                         >
-                          <IoEyeSharp className="size-4" />
+                          <IoEyeSharp className="size-5" />
                         </Link>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(project)}
                           aria-label="Edit project"
+                          title="Edit project"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         {project.publishStatus === "PUBLISHED" ? (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionProjectId === project.id}
                             onClick={() =>
                               void handlePublishStatus(project, "DRAFT")
                             }
                             aria-label="Unpublish project"
+                            title="Unpublish project"
                           >
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           </Button>
                         ) : (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionProjectId === project.id}
                             onClick={() =>
                               void handlePublishStatus(project, "PUBLISHED")
                             }
                             aria-label="Publish project"
+                            title="Publish project"
                           >
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           </Button>
                         )}
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionProjectId === project.id}
                           onClick={() =>
                             void handlePublishStatus(project, "ARCHIVED")
                           }
                           aria-label="Archive project"
+                          title="Archive project"
                         >
-                          <IoSettingsSharp className="size-3.5" />
+                          <IoSettingsSharp className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionProjectId === project.id}
                           onClick={() => void handleDelete(project)}
                           aria-label="Delete project"
+                          title="Delete project"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -912,7 +923,7 @@ const ProjectManagement = () => {
                 onClick={closeForm}
                 aria-label="Close project form"
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -1236,7 +1247,7 @@ const ProjectManagement = () => {
                     variant="outline"
                     onClick={addGalleryImageRow}
                   >
-                    <ImagePlus className="size-4" />
+                    <ImagePlus className="size-5" />
                     Add Image
                   </Button>
                 </div>
@@ -1318,7 +1329,7 @@ const ProjectManagement = () => {
                                 onClick={() => removeGalleryImageRow(index)}
                                 aria-label="Remove gallery image"
                               >
-                                <FaTrashAlt className="size-3.5" />
+                                <FaTrashAlt className="size-4.5" />
                               </Button>
                             </div>
                           </div>
@@ -1440,7 +1451,7 @@ const ProjectManagement = () => {
                 {isSubmitting ? (
                   <Loader2 className="size-4 animate-spin" />
                 ) : (
-                  <BsFillSendFill className="size-4" />
+                  <BsFillSendFill className="size-5" />
                 )}
                 {isEditing ? "Save Changes" : "Create Project"}
               </Button>

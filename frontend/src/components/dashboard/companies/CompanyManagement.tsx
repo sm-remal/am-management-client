@@ -409,7 +409,7 @@ const CompanyManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Create Company
           </Button>
         </div>
@@ -640,81 +640,94 @@ const CompanyManagement = () => {
                         <Link
                           href={`/companies/${company.slug}`}
                           target="_blank"
-                          className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-background text-sm font-medium text-foreground shadow-xs transition-all hover:bg-muted"
+                          className="inline-flex size-9 items-center justify-center rounded-xs border border-sky-200 bg-sky-50 text-sm font-medium text-sky-700 shadow-xs transition-all cursor-pointer hover:bg-sky-100 hover:text-sky-800"
                           aria-label={`View ${company.name}`}
+                          title={`View ${company.name}`}
                         >
-                          <IoEyeSharp className="size-4" />
+                          <IoEyeSharp className="size-5" />
                         </Link>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(company)}
                           aria-label="Edit company"
+                          title="Edit company"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         {company.status === "PUBLISHED" ? (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionCompanyId === company.id}
                             onClick={() =>
                               void handleStatusChange(company, "DRAFT")
                             }
                             aria-label="Unpublish company"
+                            title="Unpublish company"
                           >
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           </Button>
                         ) : (
                           <Button
                             type="button"
                             variant="outline"
                             size="icon-sm"
+                            className="size-9 rounded-xs border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed"
                             disabled={actionCompanyId === company.id}
                             onClick={() =>
                               void handleStatusChange(company, "PUBLISHED")
                             }
                             aria-label="Publish company"
+                            title="Publish company"
                           >
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           </Button>
                         )}
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed"
                           disabled={
                             actionCompanyId === company.id ||
                             company.isMainCompany
                           }
                           onClick={() => void handleMainCompany(company)}
                           aria-label="Set as main company"
+                          title="Set as main company"
                         >
-                          <HiDocumentCheck className="size-4" />
+                          <HiDocumentCheck className="size-5" />
                         </Button>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionCompanyId === company.id}
                           onClick={() =>
                             void handleStatusChange(company, "ARCHIVED")
                           }
                           aria-label="Archive company"
+                          title="Archive company"
                         >
-                          <IoSettingsSharp className="size-3.5" />
+                          <IoSettingsSharp className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionCompanyId === company.id}
                           onClick={() => void handleDelete(company)}
                           aria-label="Delete company"
+                          title="Delete company"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -778,7 +791,7 @@ const CompanyManagement = () => {
                 onClick={closeForm}
                 aria-label="Close company form"
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -1185,7 +1198,7 @@ const CompanyManagement = () => {
                 {isSubmitting ? (
                   <Loader2 className="size-4 animate-spin" />
                 ) : (
-                  <BsFillSendFill className="size-4" />
+                  <BsFillSendFill className="size-5" />
                 )}
                 {isEditing ? "Save Changes" : "Create Company"}
               </Button>

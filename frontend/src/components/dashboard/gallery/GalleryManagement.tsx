@@ -303,7 +303,7 @@ const GalleryManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Add Image
           </Button>
         </div>
@@ -510,15 +510,18 @@ const GalleryManagement = () => {
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(image)}
                           aria-label="Edit gallery image"
+                          title="Edit gallery image"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className={cn("size-9 rounded-xs", image.isPublished ? "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed" : "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed")}
                           disabled={actionImageId === image.id}
                           onClick={() => void handleTogglePublished(image)}
                           aria-label={
@@ -526,22 +529,25 @@ const GalleryManagement = () => {
                               ? "Unpublish image"
                               : "Publish image"
                           }
+                          title={image.isPublished ? "Unpublish image" : "Publish image"}
                         >
                           {image.isPublished ? (
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           ) : (
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           )}
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionImageId === image.id}
                           onClick={() => void handleDelete(image)}
                           aria-label="Delete gallery image"
+                          title="Delete gallery image"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -583,7 +589,7 @@ const GalleryManagement = () => {
                 onClick={closeForm}
                 aria-label="Close form"
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -754,7 +760,7 @@ const GalleryManagement = () => {
                   {isSubmitting ? (
                     <Loader2 className="size-4 animate-spin" />
                   ) : (
-                    <BsFillSendFill className="size-4" />
+                    <BsFillSendFill className="size-5" />
                   )}
                   {isEditing ? "Save Changes" : "Add Image"}
                 </Button>

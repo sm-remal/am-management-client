@@ -318,7 +318,7 @@ const CareerManagement = () => {
             Refresh
           </Button>
           <Button type="button" onClick={openCreateForm}>
-            <Plus className="size-4" />
+            <Plus className="size-5" />
             Create Job
           </Button>
         </div>
@@ -516,31 +516,40 @@ const CareerManagement = () => {
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-800 cursor-pointer disabled:cursor-not-allowed"
                           onClick={() => handleEdit(job)}
+                          aria-label="Edit job"
+                          title="Edit job"
                         >
-                          <FaEdit className="size-3.5" />
+                          <FaEdit className="size-4.5" />
                         </Button>
                         <Button
                           type="button"
                           variant="outline"
                           size="icon-sm"
+                          className={cn("size-9 rounded-xs", job.isPublished ? "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:text-amber-800 cursor-pointer disabled:cursor-not-allowed" : "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 cursor-pointer disabled:cursor-not-allowed")}
                           disabled={actionId === job.id}
                           onClick={() => void handleTogglePublish(job)}
+                          aria-label={job.isPublished ? "Unpublish job" : "Publish job"}
+                          title={job.isPublished ? "Unpublish job" : "Publish job"}
                         >
                           {job.isPublished ? (
-                            <FaPauseCircle className="size-3.5" />
+                            <FaPauseCircle className="size-4.5" />
                           ) : (
-                            <MdCheckBox className="size-4" />
+                            <MdCheckBox className="size-5" />
                           )}
                         </Button>
                         <Button
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionId === job.id}
                           onClick={() => void handleDelete(job)}
+                          aria-label="Delete job"
+                          title="Delete job"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -579,7 +588,7 @@ const CareerManagement = () => {
                 size="icon-sm"
                 onClick={closeForm}
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -751,7 +760,7 @@ const CareerManagement = () => {
                   {isSubmitting ? (
                     <Loader2 className="size-4 animate-spin" />
                   ) : (
-                    <BsFillSendFill className="size-4" />
+                    <BsFillSendFill className="size-5" />
                   )}
                   {isEditing ? "Save Changes" : "Create Job"}
                 </Button>

@@ -206,8 +206,7 @@ export const fetchPublicSettings = async (): Promise<PublicSettings> => {
     }
 
     return mapPublicSettings(result.data.settings);
-  } catch (error) {
-    console.error("Failed to fetch public settings:", error);
+  } catch {
     return defaultPublicSettings;
   }
 };
@@ -258,8 +257,8 @@ export const usePublicSettings = (): PublicSettings => {
             setSettings(loadedSettings);
           }
         })
-        .catch((error) => {
-          console.error("Failed to load public settings:", error);
+        .catch(() => {
+          setSettings(defaultPublicSettings);
         });
     };
 

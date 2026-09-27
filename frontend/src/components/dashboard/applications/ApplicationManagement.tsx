@@ -393,10 +393,13 @@ const ApplicationManagement = () => {
                           type="button"
                           variant="destructive"
                           size="icon-sm"
+                          className="size-9 rounded-xs border-red-200 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer disabled:cursor-not-allowed"
                           disabled={actionId === item.id}
                           onClick={() => void handleDelete(item)}
+                          aria-label="Delete application"
+                          title="Delete application"
                         >
-                          <FaTrashAlt className="size-3.5" />
+                          <FaTrashAlt className="size-4.5" />
                         </Button>
                       </div>
                     </td>
@@ -435,7 +438,7 @@ const ApplicationManagement = () => {
                 size="icon-sm"
                 onClick={() => setSelected(null)}
               >
-                <X className="size-4" />
+                <X className="size-5" />
               </Button>
             </div>
 
@@ -504,7 +507,7 @@ const ApplicationManagement = () => {
                   rel="noreferrer"
                   className={buttonVariants({ variant: "outline" })}
                 >
-                  <ExternalLink className="size-4" />
+                  <ExternalLink className="size-5" />
                   Open CV
                 </a>
                 {statusOptions.map((option) => (
